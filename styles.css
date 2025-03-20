@@ -1,0 +1,182 @@
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(45deg, #00c6ff, #0072ff, #00b3b3);
+    background-size: 200% 200%;
+    animation: gradient 10s ease infinite;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    color: #333;
+    transform-style: preserve-3d;
+    perspective: 1500px;
+    transition: all 0.3s ease;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 3.5em;
+    font-weight: 600;
+    color: #6a1b9a;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+header p {
+    font-size: 1.3em;
+    margin-top: 10px;
+    color: #444;
+}
+
+.bookmark-form {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.bookmark-form input {
+    padding: 15px;
+    font-size: 1em;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    width: 250px;
+    background-color: #f4f4f4;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.1), -6px -6px 15px rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    transform: rotateY(0);
+}
+
+.bookmark-form input:focus {
+    outline: none;
+    background-color: #e3e3e3;
+    box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.1), -6px -6px 25px rgba(255, 255, 255, 0.5);
+    transform: rotateY(5deg);
+}
+
+.bookmark-form button {
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #ff6d00, #ff9800);
+    color: white;
+    font-size: 1.1em;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.bookmark-form button:hover {
+    background: linear-gradient(45deg, #ff9800, #ff5722);
+    transform: translateY(-4px);
+}
+
+.bookmark-list {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px solid #ddd;
+    text-align: center;
+}
+
+.bookmark-list h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#bookmark-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    perspective: 1500px;
+}
+
+.bookmark-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transform: rotateY(0);
+    cursor: pointer;
+}
+
+.bookmark-item:hover {
+    transform: translateY(-10px) rotateY(5deg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(255, 255, 255, 0.5);
+}
+
+.bookmark-item p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #6a1b9a;
+    font-weight: 500;
+}
+
+.bookmark-item a {
+    text-decoration: none;
+    color: #0072ff;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.bookmark-item a:hover {
+    color: #00c6ff;
+}
+
+.bookmark-item button {
+    padding: 10px 15px;
+    background-color: #00c6ff;
+    color: white;
+    font-size: 1em;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.bookmark-item button:hover {
+    background-color: #0072ff;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .bookmark-form input, .bookmark-form button {
+        width: 100%;
+    }
+}
